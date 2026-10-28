@@ -28,13 +28,12 @@ def run_algorithm() -> list:
 
 if __name__ == "__main__":
     tracemalloc.start()
-    start = time.time()
-
-    # for _ in range(NUM_OF_ALGORITHMS):
-        # run_algorithm()
     run_algorithm()
+    print(f"\nmeasure memory for one algorithm:\n{tracemalloc.get_traced_memory()[1] / 2**10} KiB")
 
-    print(f"{tracemalloc.get_traced_memory()[1] / 2**10} KiB")
-    # print(f"time: {time.time() - start:.2f} s.")
+    start = time.time()
+    for _ in range(NUM_OF_ALGORITHMS):
+        run_algorithm()
+    print(f"\nmeasure time for all num of algorigthms:\n{time.time() - start:.2f} s.")
 
 

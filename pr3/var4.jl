@@ -29,7 +29,10 @@ function test()
     end
 end
 
+println("\nmeasure time and memory for all num of algorithms:")
 @time test()
+
+println("\nmeasure time and memory for one algorithm")
 @time run_algorithm()
 
 
